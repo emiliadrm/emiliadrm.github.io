@@ -3,6 +3,16 @@ body {
   padding: 0;
 }
 
-.header {
+body {
+  background-image: url('./assets/images/kevin-bosc-yosemite.jpg');
+  transition: opacity 1.5s ease-in-out, visibility 1.5s;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
+.main {
+  width: 80%;
+  margin: 0 auto;
 }
