@@ -7,3 +7,13 @@ body {
   background-image: url('./assets/images/full-bloom.png');
   transition: opacity 1.5s ease-in-out, visibility 1.5s;
 }
+
+@font-face {
+  font-family: 'ArchisticoBold';
+  src: url('./assets/font/Archistico_Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Archistico';
+  src: url('./assets/font/Archistico_Simple.ttf') format('truetype');
+}
