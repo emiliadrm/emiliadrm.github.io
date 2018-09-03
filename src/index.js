@@ -1,6 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { css } from 'aphrodite';
+import { createStore, applyMiddleware, compose } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import { Provider } from 'react-redux';
+
+import { reducer } from './reducers';
+import { watcherSaga } from './sagas';
 
 import Header from './components/Header';
 import Home from './components/Home';
@@ -21,4 +26,18 @@ class App extends React.Component {
   }
 }
 
-render(<App />, document.getElementById("main"));
+const reduxDevTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+
+const sagaMiddleware = createSagaMiddleware();
+let store = createStore(
+  reducer,
+  compose(applyMiddleware(sagaMiddleware), reduxDevTools)
+);
+
+sagaMiddleware.run(watcherSaga);
+
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+, document.getElementById("main"));

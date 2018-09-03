@@ -9,20 +9,30 @@
   "scripts": {
     "start": "parcel ./src/index.html",
     "prebuild": "trash dist/**",
-    "build": "parcel build ./src/index.html --public-url ./dist"
+    "build": "parcel build ./src/index.html --public-url ./dist",
+    "postbuild": "cpx ./dist/index.html . -u"
   },
   "dependencies": {
     "aphrodite": "^2.2.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
     "font-awesome": "^4.7.0",
     "parcel": "^1.9.7",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "trash-cli": "^1.4.0"
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-saga": "^0.16.0"
   },
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "cpx": "^1.5.0",
     "node-sass": "^4.9.3",
-    "parcel-bundler": "^1.9.7"
+    "parcel-bundler": "^1.9.7",
+    "trash-cli": "^1.4.0"
   }
 }
